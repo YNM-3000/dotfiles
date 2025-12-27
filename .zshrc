@@ -157,7 +157,6 @@ export VISUAL=nvim
 
 export EDITOR="$VISUAL"
 
-export PATH="/opt/homebrew/opt/node@18/bin:$PATH"
 
 function yazi_func() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
@@ -182,11 +181,11 @@ alias nn='neofetch'
 
 alias python=python3
 
-export NVM_DIR=“$HOME/.nvm”
-[ -s “$NVM_DIR/nvm.sh” ] && \. “$NVM_DIR/nvm.sh”  # This loads nvm
-[ -s “$NVM_DIR/bash_completion” ] && \. “$NVM_DIR/bash_completion”  # This loads nvm bash_completion
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 # Added by Windsurf
 export PATH="/Users/tcg/.codeium/windsurf/bin:$PATH"
+
+# Added by CodeRabbit CLI installer
+export PATH="/Users/tcg/.local/bin:$PATH"
