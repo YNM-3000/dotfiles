@@ -32,6 +32,7 @@ local options = {
 	foldlevelstart = 99,
 	foldenable = true,
 	fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]],
+	-- winborder = "rounded",
 	-- background = "dark",
 	-- cmdheight = 2,                           -- more space in the neovim command line for displaying messages
 	-- fileencoding = "utf-8",                  -- the encoding written to a file

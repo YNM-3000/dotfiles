@@ -1,27 +1,34 @@
-local indent_blankline_ok, indent_blankline = pcall(require, "ibl")
-if not indent_blankline_ok then
-	return
-end
+return {
+	"lukas-reineke/indent-blankline.nvim",
+	event = { "BufReadPre", "BufNewFile" },
+	main = "ibl",
+	-- opts = {
+	-- 	indent = { char = "┊" },
+	-- },
+	config = function()
+		local indent_blankline = require("ibl")
 
-local highlight = {
-	"Error",
-	"Constant",
-	"String",
-	"Function",
-	"Statement",
-	"Type",
-	"Label",
+		local highlight = {
+			"Error",
+			"Constant",
+			"String",
+			"Function",
+			"Statement",
+			"Type",
+			"Label",
+		}
+
+		vim.g.rainbow_delimiters = { highlight = highlight }
+
+		indent_blankline.setup({
+			indent = {
+				char = "╎",
+			},
+			scope = {
+				char = "▏",
+				highlight = highlight,
+				-- priority = 500,
+			},
+		})
+	end,
 }
-
-vim.g.rainbow_delimiters = { highlight = highlight }
-
-indent_blankline.setup({
-	indent = {
-		char = "╎",
-	},
-	scope = {
-		char = "▏",
-		highlight = highlight,
-		-- priority = 500,
-	},
-})
