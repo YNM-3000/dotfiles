@@ -184,11 +184,8 @@ alias python=python3
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
-# Added by Windsurf
-export PATH="/Users/tcg/.codeium/windsurf/bin:$PATH"
-
 # Added by CodeRabbit CLI installer
-export PATH="/Users/tcg/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 # export ANTHROPIC_BASE_URL="http://localhost:9876"
 # export ANTHROPIC_API_KEY="dummy"
