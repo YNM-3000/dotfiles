@@ -44,6 +44,9 @@ return {
 				"go",
 				"rust",
 				"regex",
+				"gdscript",
+				"godot_resource",
+				"gdshader",
 			},
 			auto_install = true,
 			incremental_selection = {
