@@ -189,3 +189,9 @@ export PATH="/Users/tcg/.codeium/windsurf/bin:$PATH"
 
 # Added by CodeRabbit CLI installer
 export PATH="/Users/tcg/.local/bin:$PATH"
+
+# export ANTHROPIC_BASE_URL="http://localhost:9876"
+# export ANTHROPIC_API_KEY="dummy"
+export OLLAMA_CONTEXT_LENGTH=32768
+
+export NODE_AUTH_TOKEN="$(gh auth token)"
