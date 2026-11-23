@@ -6,16 +6,15 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+# export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
-# Path to your oh-my-zsh installation.
+# Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
+# load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="ys"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
@@ -36,8 +35,11 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # zstyle ':omz:update' mode auto      # update automatically without asking
 # zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
-# Uncomment the following line to change how often to auto-update (in days).
+# Uncomment the following line to change the frequency the auto-updater is run (in days).
 # zstyle ':omz:update' frequency 13
+
+# Uncomment the following line to set how old an update must be before it's applied, manually or via the auto-updater (in days).
+# zstyle ':omz:update' cooldown 10
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
@@ -95,8 +97,6 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-# PROMPT='%B%m%~%b$(git_super_status) %# '
-
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -147,12 +147,6 @@ source $ZSH/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-# go env
-# eval "$(~/development/urbancompass/scripts/go activate)"
-# _evalcache ~/development/urbancompass/scripts/go activate
-# export PATH="$HOME/development/urbancompass/build-support/go/sdk/bin/go"
-# alias gg="$HOME/development/urbancompass/build-support/go/sdk/bin/go"
-# alias grpc="$HOME/development/urbancompass/scripts/grpcreq"
 export VISUAL=nvim
 
 export EDITOR="$VISUAL"
@@ -191,4 +185,6 @@ export PATH="$HOME/.local/bin:$PATH"
 # export ANTHROPIC_API_KEY="dummy"
 export OLLAMA_CONTEXT_LENGTH=32768
 
-export NODE_AUTH_TOKEN="$(gh auth token)"
+# export NODE_AUTH_TOKEN="$(gh auth token)"
+eval "$(mise activate zsh)"
+
