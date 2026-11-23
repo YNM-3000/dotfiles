@@ -140,6 +140,7 @@ brew link ffmpeg-full imagemagick-full -f --overwrite
 ### Clone repo
 
 At any non-dotfiles folder
+
 ```
 git  clone https://github.com/YNM-3000/dotfiles.git
 ```
